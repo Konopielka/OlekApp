@@ -15,7 +15,6 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-import java.awt.*;
 
 public class OlekFX extends Application implements EventHandler<ActionEvent> {
     OlekLosuLosu olekLosuLosu = new OlekLosuLosu();
@@ -47,6 +46,10 @@ public class OlekFX extends Application implements EventHandler<ActionEvent> {
 
         Scene scene = new Scene(layout, 300, 250);
         stage.setScene(scene);
+        //tutaj błąd
+        //https://docs.oracle.com/javafx/2/get_started/css.htm
+        scene.getStylesheets().add(OlekFX.class.getResource("Kolorki.css").toExternalForm());
+
         stage.show();
 
     }
