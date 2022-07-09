@@ -5,6 +5,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
@@ -19,6 +20,8 @@ import javafx.stage.Stage;
 public class OlekFX extends Application implements EventHandler<ActionEvent> {
     OlekLosuLosu olekLosuLosu = new OlekLosuLosu();
     Button button;
+    Label odpowiedzi = new Label();
+
 
     public static void main(String[] args) {
         launch(args);
@@ -29,6 +32,10 @@ public class OlekFX extends Application implements EventHandler<ActionEvent> {
         stage.setTitle("OlekApp");
         button = new Button("Następny");
         button.setOnAction(this);
+        //tekst
+
+
+
 
         GridPane layout = new GridPane();
         layout.setAlignment(Pos.CENTER);
@@ -41,6 +48,8 @@ public class OlekFX extends Application implements EventHandler<ActionEvent> {
         sceneTitle.setFont(Font.font("Tahoma", FontWeight.BLACK, 20));
         layout.add(sceneTitle, 0, 0, 1, 1);
         layout.add(button, 0,1);
+        layout.add(odpowiedzi,0,2);
+        odpowiedzi.setText(olekLosuLosu.haslo());
 
 
 
@@ -48,7 +57,7 @@ public class OlekFX extends Application implements EventHandler<ActionEvent> {
         stage.setScene(scene);
         //tutaj błąd
         //https://docs.oracle.com/javafx/2/get_started/css.htm
-        scene.getStylesheets().add(OlekFX.class.getResource("Kolorki.css").toExternalForm());
+        //scene.getStylesheets().add(OlekFX.class.getResource("Kolorki.css").toExternalForm());
 
         stage.show();
 
@@ -57,7 +66,9 @@ public class OlekFX extends Application implements EventHandler<ActionEvent> {
     @Override
     public void handle(ActionEvent actionEvent) {
         if(actionEvent.getSource() == button){
-            System.out.println(olekLosuLosu.haslo());
+            //System.out.println(olekLosuLosu.haslo());
+            odpowiedzi.setText(olekLosuLosu.haslo());
+
         }
     }
 }

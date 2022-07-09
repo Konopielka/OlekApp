@@ -24,7 +24,7 @@ public class AppOlek {
 
         OlekLosuLosu olekLosuLosu = new OlekLosuLosu();
 
-        olekLosuLosu.haslo();
+
     }
 }
 

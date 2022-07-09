@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Random;
 
-public class OlekLosuLosu<olek> {
+public class OlekLosuLosu {
 
     public String haslo(){
 
